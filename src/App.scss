@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+$yellow : #FFCE32;
+$blue :  #1D63FF;
+$white : white;
+$black : black;
+$input-padding : 8px;
+$button-padding : 10px;
+$normal-border-radius : 5px;
+$medium-border-radius : 10px;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+button{
+  padding: $input-padding;
+  background-color: $yellow;
+  border: none;
+  border-radius: $normal-border-radius;
+  cursor: pointer;
+}
+
+
+
+
+//this below code is for register page.
+.register-main-container{
+    height: 100vh;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .register-small-container{
+    
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $blue;
+    border-radius: 5px;
+    padding: 20px;
+    gap: 10px;
+  
+    
+     >input{
+      padding: $input-padding;
+     }
+     >button{
+      background-color: $yellow;
+      padding: $button-padding;
+      border-radius: 5px;
+      border: none;
+     }
+     >div > a{
+      color: $yellow;
+     }
+  }
+  
+  
+  ////finishing of register page code.
+
+  
+//login page code starts here.
+.login-main-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .login-small-container{
+    background-color: $blue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    gap: 10px;
+    border-radius: $normal-border-radius;
+    text-align: center;
+  
+    .input-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    >input{
+      width: 200px;
+      padding: $input-padding;
+    }
+    >a{
+      margin-left:auto;
+      color: red;
+    }
+  }
+    >button{
+      padding: $button-padding;
+      background-color: $yellow;
+      border: none;
+      border-radius: $normal-border-radius;
+    }
+  
+  
+  
+  
+  
+    >div>a{
+      color: $yellow;
+    }
+  }
+  
+  
+  // login page code ends here.
+  
+
+ /* CSS for the loan request div by admin */
+.loan-request {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.request-info {
+  flex: 1;
+}
+
+.request-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Style the buttons */
+.approve-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+
+}
+
+.decline-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .loan-request {
+    flex-direction: column;
+  }
+  
+  .request-actions {
+    margin-top: 10px;
+  }
+}
+
+
+
+/* CSS for the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.navbar-left h1 {
+  margin: 0;
+}
+
+.navbar-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+  }
+
+  .navbar-right a {
+    margin: 5px;
+  }
+}
+
+
+
+/* CSS for the Request page */
+.request-page {
+  padding: 20px;
+}
+
+.loan-requests {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loan-request {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.request-info {
+  flex: 1;
+}
+
+.request-status {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .loan-request {
+    flex-direction: column;
+  }
+}
+
+
+
+/* CSS for the Approved Requests page */
+.approved-requests {
+  padding: 20px;
+}
+
+.approved-request {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.request-info {
+  flex: 1;
+}
+
+.request-actions button {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .approved-request {
+    flex-direction: column;
+  }
+}
+
+
+
+/* CSS for the Declined Requests page */
+.declined-requests {
+  padding: 20px;
+}
+
+.declined-request {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.request-info {
+  flex: 1;
+}
+
+.declined-status {
+  background-color: #ff0000;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .declined-request {
+    flex-direction: column;
+  }
+}
+
+
+
+
+/* CSS for the Paid Requests page */
+.paid-requests {
+  padding: 20px;
+}
+
+.paid-request {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.request-info {
+  flex: 1;
+}
+
+.paid-status {
+  background-color: #2ecc71;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .paid-request {
+    flex-direction: column;
+  }
+}
+
+
+.add-request{
+  display: flex;
+  gap: 10px;
+  >input{
+    padding-left: 5px;
+  }
+}
+
+@media (max-width : 560px){
+  .add-request {
+    flex-direction: column;
+  }
+}
+
+
+
+
+/* CSS for the Repayment page */
+.repayment-page {
+  padding: 20px;
+}
+
+.loan-terms {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.term {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.term p {
+  margin: 0;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .term {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .term p {
+    margin-right: 20px;
+  }
+}
+
+
+button{
+  color: black;
+}
+
+
+// loading button css
+.lds-ring {
+  display: inline-block;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 20px;
+
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.none{
+  display: none;
+}
+
+
+.logout{
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  text-decoration: none;
+  background-color: #f44336;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+
+}
