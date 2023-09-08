@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 const Approved = ({showLoader,hideLoader}) => {
     const [approvedRequests,setApprovedRequests] = useState([]);
     useEffect(() => {
-        showLoader();
         const approvedData = async() => {
+            showLoader();
             try{
             const approved = await axios.get(`${process.env.REACT_APP_SERVER_URL}/loan/approved`,{
                 headers : {
@@ -18,10 +18,10 @@ const Approved = ({showLoader,hideLoader}) => {
         }catch(err){
             console.log(err);
         }
+        hideLoader();
         }
 
         approvedData();
-        hideLoader();
 
         // eslint-disable-next-line
     },[]);

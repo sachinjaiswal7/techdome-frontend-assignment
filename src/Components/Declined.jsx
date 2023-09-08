@@ -5,8 +5,8 @@ import React, { useEffect, useState } from 'react'
 const Declined = ({showLoader,hideLoader}) => {
     const [declinedRequests,setDeclinedRequest] = useState([]);
     useEffect(() => {
-        showLoader();
         const declinedData = async() => {
+            showLoader();
             try{
                 const declined = await axios.get(`${process.env.REACT_APP_SERVER_URL}/loan/declined`,{
                     headers : {
@@ -18,10 +18,10 @@ const Declined = ({showLoader,hideLoader}) => {
             }catch(err){
                 console.log(err);
             }
+            hideLoader();
         }
 
         declinedData();
-        hideLoader();
         // eslint-disable-next-line
     },[]);
     

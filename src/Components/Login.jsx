@@ -5,9 +5,9 @@ const Login = ({loginHandler,showLoader,hideLoader,setLoggedIn}) => {
   const navigate = useNavigate();
   return (
     <div className='login-main-container'>
-    <form onSubmit={(e) => {
+    <form onSubmit={async(e) => {
       showLoader();
-      loginHandler(e,navigate,setLoggedIn)
+      await loginHandler(e,navigate,setLoggedIn)
       hideLoader();
       }}  className='login-small-container'>
        <h1>Login to Your account</h1>

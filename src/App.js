@@ -105,8 +105,8 @@ function App() {
     <div style={{backgroundColor:"black"}} className="lds-ring none"><div></div><div></div><div></div><div></div></div>
     {loggedIn ?  <Link to={"/"} className='logout'  onClick={() => (logoutHandler(setLoggedIn))} >Logout</Link> : <div></div>}
    <Routes>
-    <Route path='/' element = {<Register setLoggedIn= {setLoggedIn} showLoader={showLoader} hideLoader={hideLoader} registerHandler = {registerHandler}/>}/>
-    <Route path='/login' element = {<Login setLoggedIn = {setLoggedIn} showLoader={showLoader} hideLoader={hideLoader} loginHandler = {loginHandler}/>}/>
+    <Route path='/' element = {<Register  setLoggedIn= {setLoggedIn} showLoader={showLoader} hideLoader={hideLoader} registerHandler = {registerHandler}/>}/>
+    <Route path='/login' element = {<Login  setLoggedIn = {setLoggedIn} showLoader={showLoader} hideLoader={hideLoader} loginHandler = {loginHandler}/>}/>
     <Route path='/loan-request-admin' element={<Admin showLoader={showLoader} hideLoader={hideLoader}/>}/>
     <Route path='/user/*' element = {<User showLoader={showLoader} hideLoader={hideLoader}/>} />
    </Routes>

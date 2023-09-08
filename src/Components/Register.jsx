@@ -16,9 +16,9 @@ const Register = ({registerHandler,showLoader,hideLoader,setLoggedIn}) => {
   const navigate = useNavigate();
   return (
     <div className="register-main-container">
-      <form onSubmit={(e) => {
+      <form onSubmit={async(e) => {
         showLoader();
-        registerHandler(e,selectedRole,navigate,setLoggedIn)
+        await registerHandler(e,selectedRole,navigate,setLoggedIn)
         hideLoader();
         }} className="register-small-container">
         <h1>Create Account</h1>

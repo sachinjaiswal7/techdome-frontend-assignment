@@ -37,8 +37,8 @@ const Repayment = ({showLoader,hideLoader}) => {
     const [loanTerms,setLoanTerms] = useState([]);
 
     useEffect(() => {
-        showLoader();
         const termData = async() => {
+            showLoader();
             try{
             const term = await axios.get(`${process.env.REACT_APP_SERVER_URL}/loan/repayment/${loanId}`,{
                 headers : {
@@ -49,9 +49,9 @@ const Repayment = ({showLoader,hideLoader}) => {
         }catch(err){
             console.log(err);
         }
+        hideLoader();
         }
         termData();
-        hideLoader();
 
         // eslint-disable-next-line 
     },[]);
@@ -72,9 +72,9 @@ const Repayment = ({showLoader,hideLoader}) => {
                 <p><b>Status</b>: {term.status}</p>
                 </div>
                 {term.status === 'PAY' && (
-                  <button onClick={() => {
+                  <button onClick={async() => {
                     showLoader();
-                    handlePayClick(loanId,index+1,setLoanTerms)
+                    await handlePayClick(loanId,index+1,setLoanTerms)
                     hideLoader();
                 }
                 }>Pay</button>

@@ -48,14 +48,14 @@ const AdminRequest = ({name,loanId,amount,term,setRequestData,showLoader,hideLoa
       <p><b>Term:</b> {term} Weeks </p>
     </div>
     <div className="request-actions">
-      <button onClick={() =>{
+      <button onClick={async() =>{
         showLoader();
-        statusHandler(loanId,setRequestData,"approve")
+        await statusHandler(loanId,setRequestData,"approve")
         hideLoader();
         } } style={{backgroundColor:"#4caf50"}} className="approve-button">Approve</button>
-      <button onClick={() =>{
+      <button onClick={async() =>{
         showLoader();
-        statusHandler(loanId,setRequestData,"decline") 
+        await statusHandler(loanId,setRequestData,"decline") 
         hideLoader();
       }} style={{backgroundColor:"#f44336"}} className="decline-button">Decline</button>
     </div>

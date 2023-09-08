@@ -6,8 +6,8 @@ const Paid = ({showLoader,hideLoader}) => {
   const [paidRequests, setPaidRequests] = useState([]);
 
   useEffect(() => {
-    showLoader();
-    const paidData = async () => {
+      const paidData = async () => {
+        showLoader();
       try {
         const paid = await axios.get(
           `${process.env.REACT_APP_SERVER_URL}/loan/paid`,
@@ -21,9 +21,9 @@ const Paid = ({showLoader,hideLoader}) => {
       } catch (err) {
         console.log(err);
       }
+      hideLoader();
     };
     paidData();
-    hideLoader();
 
     // eslint-disable-next-line 
   }, []);

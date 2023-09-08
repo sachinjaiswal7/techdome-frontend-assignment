@@ -17,8 +17,8 @@ const Admin = ({showLoader,hideLoader}) => {
   },[])
 
   useEffect(()=>{
-    showLoader();
     const request = async() => {
+      showLoader();
       try{
       const data = await axios.get(`${process.env.REACT_APP_SERVER_URL}/loan/allPending`,{
         headers : {
@@ -33,9 +33,9 @@ const Admin = ({showLoader,hideLoader}) => {
       }
       console.log(err);
     }
+    hideLoader();
     }
     request();
-    hideLoader();
     // eslint-disable-next-line
   },[]);
   return (

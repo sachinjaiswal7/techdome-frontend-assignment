@@ -45,8 +45,8 @@ const Request = ({showLoader,hideLoader}) => {
     const [loanRequests,setLoanRequests] = useState([]);
 
     useEffect(() => {
-      showLoader();
       const pendingData = async() => {
+        showLoader();
         try{  
             const pending = await axios.get(`${process.env.REACT_APP_SERVER_URL}/loan/pending`,{
               headers : {
@@ -57,9 +57,9 @@ const Request = ({showLoader,hideLoader}) => {
         }catch(err){
           console.log(err)
         }
+        hideLoader();
       }
       pendingData();
-      hideLoader();
 
       // eslint-disable-next-line 
     },[]);
@@ -68,9 +68,9 @@ const Request = ({showLoader,hideLoader}) => {
         <div className="request-page">
           <div style={{display : "flex", justifyContent:"space-between", alignItems:"center", marginBottom : 10}} className='adder'>
            <h2>Loan Requests</h2>
-          <form onSubmit={(e) => {
+          <form onSubmit={async(e) => {
             showLoader();
-            addRequestHandler(e,setLoanRequests)
+             await addRequestHandler(e,setLoanRequests)
             hideLoader();
             }} className='add-request' >
             <input type="number" required min={"1"} max={"100000000000"} placeholder='Amount' />
